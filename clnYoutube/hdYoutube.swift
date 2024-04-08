@@ -9,6 +9,7 @@ import SwiftUI
 
 struct hdYoutube: View {
     @State var busqueda:String=""
+    @State var btnPerfil: Bool = false
     var body: some View {
         HStack{
             Spacer()
@@ -59,6 +60,14 @@ struct hdYoutube: View {
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                     .padding(20)
+                    .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                        btnPerfil = true                    })
+                    .sheet(isPresented: $btnPerfil, onDismiss: {btnPerfil = false}, content: {
+                        VStack{
+                            Perfil()
+                            
+                        }
+                    })
             }
         }.padding(.horizontal)
     }

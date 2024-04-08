@@ -12,7 +12,7 @@ struct ContentView: View {
         VStack{
             hdYoutube()
          
-            chnFeed()
+            CardShot()
             bMYoutube()
    
             ftYoutube()
